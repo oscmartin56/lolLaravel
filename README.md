@@ -1,8 +1,6 @@
 # Creo el proyecto de Laravel
 
-''''bash
-laravel new Gest ión
-''''''
+``laravel new Gestión campeones``
 
 En el proceso de instalacion de dan opciones y selcciono:
 * Install breeze
