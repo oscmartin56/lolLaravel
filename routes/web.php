@@ -1,11 +1,16 @@
 <?php
 
+use App\Http\Controllers\ChampsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/index',MainController::class);
+Route::view("/","home")->name("home");
+Route::view("/index","lol.index");
+Route::get('champs',[ChampsController::class,'index'])->name('champs.index');
+Route::get('champs/create',[ChampsController::class,'create'])->name('champs.create');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
