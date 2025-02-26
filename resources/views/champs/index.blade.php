@@ -9,8 +9,20 @@
         <title>Hola</title>
     </head>
     <body>
-    <p>Aqui va la tabla</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Región</th>
+                <th>Rol</th>
+                <th>Dificultad</th>
+                <th>Precio RP</th>
+                <th></th>
+            </tr>
+        </thead>
 
+    </table>
     </body>
     </html>
 </x-layouts.layout>

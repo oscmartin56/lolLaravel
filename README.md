@@ -19,6 +19,8 @@ Me dara un error porque no puede ejecutar migraciones
 * Creo en el factory un archivo para asi poder poblar mi tabla
 * Creo un nuevo seeder para mis campeones "php artisan make:seeder ChampSeeder"
 * Creo nuevas rutas para el create
+* Creacion del create.blade.php habiendole añadido la ruta en el controlador
+* Añadiendo la ruta del store en el form y añadiendole el @crsf por seguridad
 ## Diseño de pantallas
 ### 
 
