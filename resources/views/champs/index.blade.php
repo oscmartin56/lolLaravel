@@ -6,7 +6,7 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Hola</title>
+        <title>Index</title>
     </head>
     <body>
     <table>
@@ -21,8 +21,20 @@
                 <th></th>
             </tr>
         </thead>
-
-    </table>
+        <tbody>
+        @foreach($champs as $champ)
+            <tr>
+                <td>{{ $champ->id }}</td>
+                <td>{{ $champ->name }}</td>
+                <td>{{ $champ->region }}</td>
+                <td>{{ $champ->Rol }}</td>
+                <td>{{ $champ->difficulty }}</td>
+                <td>{{ $champ->RPCost }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table><br/>
+    <a style="color: greenyellow;background-color: #2563eb;border-radius: 4px;font-size: 20px " href="{{route('champs.create')}}">Agregar</a>
     </body>
     </html>
 </x-layouts.layout>

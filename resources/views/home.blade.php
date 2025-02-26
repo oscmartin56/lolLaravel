@@ -44,7 +44,7 @@
                 <h2 class="card-title">CRUD League Of Legends!</h2>
                 <p>Página para ver todos los campeones de league of legends
                 <div class="card-actions justify-end">
-                    <a class="btn btn-primary" href="/index">Ver Campeones</a>
+                    <a class="btn btn-primary" href="/champs">Ver Campeones</a>
                 </div>
             </div>
         </div>
