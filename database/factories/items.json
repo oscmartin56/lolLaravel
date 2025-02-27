@@ -1,0 +1,22 @@
+{
+    "legendary_items": [
+        {"name": "Fuerza de la Trinidad", "effects": "Aumenta daño de ataque, velocidad de ataque y vida."},
+        {"name": "Verdugo de Krakens", "effects": "Golpes cada tercer ataque hacen daño verdadero."},
+        {"name": "Arcoescudo Inmortal", "effects": "Otorga robo de vida y un escudo al recibir daño letal."},
+        {"name": "Cuchilla Negra", "effects": "Reduce armadura enemiga con cada golpe."},
+        {"name": "Filo Infinito", "effects": "Aumenta daño crítico y probabilidad de golpe crítico."},
+        {"name": "Bailarín Espectral", "effects": "Aumenta velocidad de ataque y esquiva daño letal."},
+        {"name": "Reloj de Arena de Zhonya", "effects": "Otorga inmunidad temporal con su activa."},
+        {"name": "Morellonomicón", "effects": "Reduce curación enemiga con heridas graves."},
+        {"name": "Cetro de Cristal de Rylai", "effects": "Las habilidades ralentizan a los enemigos."},
+        {"name": "Presagio de Randuin", "effects": "Reduce daño de golpes críticos recibidos."},
+        {"name": "Velo del Hada de la Muerte", "effects": "Bloquea la siguiente habilidad enemiga."},
+        {"name": "Cimitarra Mercurial", "effects": "Activa que elimina efectos de control de masas."},
+        {"name": "Baile de la Muerte", "effects": "Convierte parte del daño recibido en daño prolongado."},
+        {"name": "Mandato Imperial", "effects": "Habilidades inmovilizan y marcan enemigos para daño extra."},
+        {"name": "Sombrero Mortal de Rabadon", "effects": "Aumenta significativamente el poder de habilidad."},
+        {"name": "Coraza del Muerto", "effects": "Aumenta armadura y otorga velocidad de movimiento al moverse."},
+        {"name": "Espada del Rey Arruinado", "effects": "Ataques básicos roban vida y ralentizan a los enemigos."},
+        {"name": "Danza de la Muerte", "effects": "Convierte daño en sangrado en lugar de recibirlo instantáneamente."}
+    ]
+}

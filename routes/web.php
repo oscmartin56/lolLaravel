@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/index',MainController::class);
 Route::view("/","home")->name("home");
+
 Route::get('champs',[ChampsController::class,'index'])->name('champs.index');
 Route::get('champs/create',[ChampsController::class,'create'])->name('champs.create');
 Route::post('champs',[ChampsController::class,'store'])->name('champs.store');
