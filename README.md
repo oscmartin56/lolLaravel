@@ -21,6 +21,7 @@ Me dara un error porque no puede ejecutar migraciones
 * Creo nuevas rutas para el create
 * Creacion del create.blade.php habiendole añadido la ruta en el controlador
 * Añadiendo la ruta del store en el form y añadiendole el @crsf por seguridad
+* Agregar en el DatabaseSeeder "$this->call([ChampSeeder::class,]);" para enlazarlo con el nuevo seeder y comentar el "userFactory"
 ## Diseño de pantallas
 ### 
 
