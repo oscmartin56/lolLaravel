@@ -3,12 +3,14 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Champs;
+use App\Models\Items;
 
-class ChampSeeder extends Seeder
+class ItemsSeeder extends Seeder
 {
+
     public function run(): void
     {
-        Champs::factory(18)->create();
+        Items::factory(18)->create();
+
     }
 }

@@ -22,6 +22,9 @@ Me dara un error porque no puede ejecutar migraciones
 * Creacion del create.blade.php habiendole añadido la ruta en el controlador
 * Añadiendo la ruta del store en el form y añadiendole el @crsf por seguridad
 * Agregar en el DatabaseSeeder "$this->call([ChampSeeder::class,]);" para enlazarlo con el nuevo seeder y comentar el "userFactory"
+* Relaciono las dos tablas 1-n en los modelos con el hasMany y el belongsTo y en el controlador añado un all de la otra tabla y la compacto
+
+
 ## Diseño de pantallas
 ### 
 

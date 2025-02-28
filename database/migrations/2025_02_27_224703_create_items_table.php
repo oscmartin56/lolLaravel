@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('champs'); //Al hacer el fresh se asegura de dropear la tabla y crearla$
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('damage');
+            $table->foreignId('id_champs')
+                ->constrained('champs');
             $table->timestamps();
         });
     }

@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             ChampSeeder::class,
+            ItemsSeeder::class,
         ]);
+
+
+
     }
 }

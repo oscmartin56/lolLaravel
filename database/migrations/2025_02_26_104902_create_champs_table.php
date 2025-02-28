@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('champs'); //Al hacer el fresh se asegura de dropear la tabla y crearla
+        Schema::dropIfExists('champs');  //Al hacer el fresh se asegura de dropear la tabla y crearla
         Schema::create('champs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -19,9 +19,6 @@ return new class extends Migration
             $table->string('Rol');
             $table->string('difficulty');
             $table->integer('RPCost');
-            $table->foreignId('id_items')
-                ->nullable() //Para que puedan ser nulls
-                ->constrained('items');
             $table->timestamps();
         });
     }

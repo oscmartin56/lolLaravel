@@ -15,24 +15,28 @@
             <table style="width: 100%; border-collapse: collapse;">
                 <thead style="position: sticky; top: 0; background-color: white; z-index: 10;">
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
+                    <th>ID Campeón</th>
+                    <th>Campeón</th>
                     <th>Región</th>
                     <th>Rol</th>
                     <th>Dificultad</th>
-                    <th>Precio RP</th>
-                    <th></th>
+                    <th>ID Objeto</th>
+                    <th>Objeto</th>
+                    <th>Daño</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($champs as $champ)
+                @foreach($items as $item)
                     <tr>
-                        <td>{{ $champ->id }}</td>
-                        <td>{{ $champ->name }}</td>
-                        <td>{{ $champ->region }}</td>
-                        <td>{{ $champ->Rol }}</td>
-                        <td>{{ $champ->difficulty }}</td>
-                        <td>{{ $champ->RPCost }}</td>
+                        <td>{{$item->id_champs}}</td>
+                        <td>{{$item->champs->name}}</td>
+                        <td>{{$item->champs->region}}</td>
+                        <td>{{$item->champs->Rol}}</td>
+                        <td>{{$item->champs->difficulty}}</td>
+                        <td>{{$item->id }}</td>
+                        <td>{{$item->name }}</td>
+                        <td>{{$item->damage}}</td>
                     </tr>
                 @endforeach
                 </tbody>

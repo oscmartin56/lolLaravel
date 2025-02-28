@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Champs;
+use App\Models\Items;
 use Illuminate\Http\Request;
 
 class ChampsController extends Controller
 {
+
     public function index()
     {
         $champs = Champs::all();
-        return view('champs.index',compact('champs'));
+        $items = Items::all();
+
+        return view('champs.index', compact('champs', 'items'));
     }
     public function create()
     {

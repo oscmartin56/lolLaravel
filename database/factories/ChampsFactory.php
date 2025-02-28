@@ -18,7 +18,7 @@ class ChampsFactory extends Factory
         return [
             'name' => fake()->unique()->randomElement($name),
             'region' => fake()->randomElement(['Demacia', 'Noxus', 'Ionia', 'Piltover', 'Zaun', 'Freljord', 'Shurima', 'Targon', 'The Void', 'Bilgewater', 'Bandle City', 'Shadow Isles']),
-            'Rol' => fake()->randomElement(['Tank', 'Mage', 'Assassin', 'Marksman', 'Support', 'Fighter']),
+            'Rol' => fake()->randomElement(['Support', 'Adc', 'Mid', 'Jungla', 'Top']),
             'difficulty' => fake()->randomElement(['Easy', 'Medium', 'Hard']),
             'RPCost' => fake()->randomElement([450, 1350, 3150, 4800, 6300, 7800]),
         ];
