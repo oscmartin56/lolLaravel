@@ -18,18 +18,25 @@ class ChampsController extends Controller
     }
     public function create()
     {
-        return view('champs.create');
+        $jsonPath = database_path('factories/champs.json');
+        $jsonData = file_get_contents($jsonPath);
+        // Convertir JSON en array de PHP
+        $champs = json_decode($jsonData, true);
+        //Obtiene el nombre de los campeones
+        $champNames = collect($champs)->pluck('name');
+
+        return view('champs.create', compact('champNames'));
+
     }
     public function store(Request $request)
     {
-        Champs::create([
-            'name' => request('name'),
-            'region' => request('region'),
-            'Rol' => request('Rol'),
-            'difficulty' => request('difficulty'),
-            'RPCost' => request('RPCost'),
-        ]);
+        $datos = $request->only("name","region","Rol","difficulty","RPCost");
+        $champ = new Champs($datos);
+        $champ->save();
+
+        session()->flash("mensaje","Campeón $champ->name agregado");
         return redirect()->route('champs.index');
+
 
     }
     public function show(Champs $champs)

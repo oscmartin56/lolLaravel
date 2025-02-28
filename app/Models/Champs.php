@@ -10,7 +10,7 @@ class Champs extends Model
 {
 
     use HasFactory;
-    public $fillable=["name","region","Rol","difficulty", "RPCost"];
+    public $fillable=["name","region","Rol","difficulty","RPCost"];
 
     public function items()
     {

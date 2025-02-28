@@ -15,6 +15,12 @@
                 @csrf
                 <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-semibold">Logout</button>
             </form>
+
+            @if (session('mensaje'))
+                <div style="background-color: green; color: white; padding: 10px; margin-bottom: 10px; text-align: center;">
+                    {{ session('mensaje') }}
+                </div>
+            @endif
         @endauth
 
         @guest
