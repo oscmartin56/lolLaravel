@@ -60,8 +60,12 @@ class ItemsController extends Controller
         //
     }
 
-    public function destroy(Items $items)
+    public function destroy($id)
     {
-        //
+        $items = Items::findOrFail($id);
+        $items->delete();
+
+        session()->flash("mensaje","Campeón con el item $items->name eliminado");
+        return redirect()->route('items.index');
     }
 }

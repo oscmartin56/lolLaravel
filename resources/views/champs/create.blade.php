@@ -1,3 +1,4 @@
+<x-layouts.layout>
 @auth()
 <h2>Campeón de League of Legends</h2>
 <form action="{{route('champs.store')}}" method="post">
@@ -69,3 +70,4 @@
     </body>
     </html>
 @endguest
+</x-layouts.layout>

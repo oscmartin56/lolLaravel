@@ -11,6 +11,9 @@ Route::view("/","home")->name("home");
 Route::get('champs',[ChampsController::class,'index'])->name('champs.index');
 Route::get('champs/create',[ChampsController::class,'create'])->name('champs.create');
 Route::post('champs',[ChampsController::class,'store'])->name('champs.store');
+Route::delete('champs/{id}', [ChampsController::class, 'destroy'])->name('champs.destroy');
+Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.destroy');
+
 
 Route::get('items',[ItemsController::class,'index'])->name('items.index');
 Route::get('items/create',[ItemsController::class,'create'])->name('items.create');

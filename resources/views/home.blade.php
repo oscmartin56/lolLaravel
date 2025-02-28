@@ -34,19 +34,34 @@
         </div>
     @endguest
     @auth
-        <div class=" p-4 card bg-base-100 image-full w-96 shadow-xl">
-            <figure>
-                <img
-                    src="{{asset("/images/lol.jpg")}}"
-                    alt="League of legends" />
-            </figure>
-            <div class="card-body">
-                <h2 class="card-title">CRUD League Of Legends!</h2>
-                <p>Página para ver todos los campeones de league of legends
-                <div class="card-actions justify-end">
-                    <a class="btn btn-primary" href="/champs">Ver Campeones</a>
+            <div class="bg-blue-950 min-h-screen p-4">
+                <div class="flex justify-center space-x-4">
+                    <div class="p-4 card bg-base-100 image-full w-96 shadow-xl">
+                        <figure>
+                            <img src="{{asset("/images/lol.jpg")}}" alt="League of legends" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">CRUD League Of Legends!</h2>
+                            <p>Página para ver todos los campeones de league of legends</p>
+                            <div class="card-actions justify-end">
+                                <a class="btn btn-primary" href="/champs">Ver Campeones</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 card bg-base-100 image-full w-96 shadow-xl">
+                        <figure>
+                            <img src="{{asset("/images/lol.jpg")}}" alt="League of legends" />
+                        </figure>
+                        <div class="card-body">
+                            <h2 class="card-title">CRUD League Of Legends!</h2>
+                            <p>Página para ver los Campeones con sus respectivos Objetos de league of legends</p>
+                            <div class="card-actions justify-end">
+                                <a class="btn btn-primary" href="/items">Ver Campeones y Objetos</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    @endauth
+        @endauth
 </x-layouts.layout>

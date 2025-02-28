@@ -41,14 +41,20 @@ class ChampsController extends Controller
     }
     public function edit(Champs $champs)
     {
-        //
+        return view('champs.edit',compact('champs'));
     }
     public function update(Request $request, Champs $champs)
     {
-        //
+        $champs->update($request->input());
+        session()->flash("mensaje","Campeón $champs->nombre actualizado");
+        return redirect()->route('champs.index');
     }
-    public function destroy(Champs $champs)
+    public function destroy($id)
     {
-        //
+        $champs = Champs::findOrFail($id);
+        $champs->delete();
+
+        session()->flash("mensaje", "Campeón $champs->name eliminado");
+        return redirect()->route('champs.index');
     }
 }
