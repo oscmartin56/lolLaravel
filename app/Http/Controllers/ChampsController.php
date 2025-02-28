@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Champs;
-use App\Models\Items;
 use Illuminate\Http\Request;
 
 class ChampsController extends Controller
 {
-
     public function index()
     {
         $champs = Champs::all();
-        $items = Items::all();
+        return view('champs.index', compact( 'champs'));
 
-        return view('champs.index', compact('champs', 'items'));
     }
     public function create()
     {
@@ -30,14 +27,13 @@ class ChampsController extends Controller
     }
     public function store(Request $request)
     {
-        $datos = $request->only("name","region","Rol","difficulty","RPCost");
+
+        $datos = $request->only("name", "region", "Rol", "difficulty", "RPCost");
         $champ = new Champs($datos);
         $champ->save();
 
-        session()->flash("mensaje","Campeón $champ->name agregado");
+        session()->flash("mensaje", "Campeón $champ->name agregado");
         return redirect()->route('champs.index');
-
-
     }
     public function show(Champs $champs)
     {

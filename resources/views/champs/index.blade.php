@@ -20,23 +20,16 @@
                     <th>Región</th>
                     <th>Rol</th>
                     <th>Dificultad</th>
-                    <th>ID Objeto</th>
-                    <th>Objeto</th>
-                    <th>Daño</th>
-
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($items as $item)
+                @foreach($champs as $champ)
                     <tr>
-                        <td>{{$item->id_champs}}</td>
-                        <td>{{$item->champs->name}}</td>
-                        <td>{{$item->champs->region}}</td>
-                        <td>{{$item->champs->Rol}}</td>
-                        <td>{{$item->champs->difficulty}}</td>
-                        <td>{{$item->id }}</td>
-                        <td>{{$item->name }}</td>
-                        <td>{{$item->damage}}</td>
+                        <td>{{$champ->id}}</td>
+                        <td>{{$champ->name}}</td>
+                        <td>{{$champ->region}}</td>
+                        <td>{{$champ->Rol}}</td>
+                        <td>{{$champ->difficulty}}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -68,7 +61,7 @@
         <title>INDEX NO</title>
     </head>
     <body>
-    <h1>NO TENDRIAS QUE ESTAR AQUI</h1>
+    <h1>NO TENDRÍAS QUE ESTAR AQUI</h1>
     </body>
     </html>
 @endguest

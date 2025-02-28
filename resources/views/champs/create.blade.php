@@ -65,7 +65,7 @@
         <title>Create No</title>
     </head>
     <body>
-    <h1>NO TENDRIAS QUE ESTAR </h1>
+    <h1>NO TENDRÍAS QUE ESTAR </h1>
     </body>
     </html>
 @endguest
