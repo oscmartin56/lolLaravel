@@ -25,4 +25,6 @@ Me dara un error porque no puede ejecutar migraciones
 ## Diseño de pantallas
 ### 
 
+* Crear modelos: "php artisan make:model 'lo que quieras'"
+* Crear migraciones "php artisan make:migration create_'lo que quieras'_table"
 * (Visualizar rutas usando: "php artisan route:list")
