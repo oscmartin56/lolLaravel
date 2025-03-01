@@ -41,12 +41,23 @@ class ChampsController extends Controller
     }
     public function edit(Champs $champs)
     {
-        return view('champs.edit',compact('champs'));
+        $champNames = Champs::pluck('name');
+        return view('champs.edit', compact('champs', 'champNames'));
     }
+
     public function update(Request $request, Champs $champs)
     {
-        $champs->update($request->input());
-        session()->flash("mensaje","Campeón $champs->nombre actualizado");
+        // Actualiza el campeón con los nuevos datos
+        $champs->update([
+            'name' => $request->input('name'),
+            'region' => $request->input('region'),
+            'Rol' => $request->input('Rol'),
+            'difficulty' => $request->input('difficulty'),
+            'RPCost' => $request->input('RPCost'),
+        ]);
+
+        session()->flash("mensaje", "Campeón $champs->name actualizado");
+
         return redirect()->route('champs.index');
     }
     public function destroy($id)

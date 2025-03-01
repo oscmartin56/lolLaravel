@@ -48,6 +48,9 @@
         <button style="color: greenyellow; background-color: #2563eb; border-radius: 15px; height: 50px; width: 120px;">
             <a href="{{ route('champs.create') }}" style="color: inherit; text-decoration: none; text-align: center; line-height: 50px;">Agregar</a>
         </button>
+        <button style="color: greenyellow; background-color: #2563eb; border-radius: 15px; height: 50px; width: 120px;">
+            <a href="{{ route('champs.edit') }}" style="color: inherit; text-decoration: none; text-align: center; line-height: 50px;">Actualizar</a>
+        </button>
     </div>
     </body>
     </html>

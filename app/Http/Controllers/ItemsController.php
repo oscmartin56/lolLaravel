@@ -41,7 +41,7 @@ class ItemsController extends Controller
         $items->id_champs = $datos['id_champs'];
         $items->save();
 
-        session()->flash("mensaje", "Campeón con item $items->name   , agregado");
+        session()->flash("mensaje", "Campeón con item $items->name, agregado");
         return redirect()->route('items.index');
     }
 

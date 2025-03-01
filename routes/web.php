@@ -13,6 +13,9 @@ Route::get('champs/create',[ChampsController::class,'create'])->name('champs.cre
 Route::post('champs',[ChampsController::class,'store'])->name('champs.store');
 Route::delete('champs/{id}', [ChampsController::class, 'destroy'])->name('champs.destroy');
 Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.destroy');
+Route::get('champs/edit', [ChampsController::class, 'edit'])->name('champs.edit');
+Route::put('champs', [ChampsController::class, 'update'])->name('champs.update');
+
 
 
 Route::get('items',[ItemsController::class,'index'])->name('items.index');
