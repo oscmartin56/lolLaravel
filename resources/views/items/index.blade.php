@@ -43,7 +43,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" style="color: white; background-color: red; border-radius: 5px; padding: 5px 10px;">Eliminar</button>
-                                    <a href="{{ route('items.edit', $items->id) }}" style="color: white; background-color: blue; border-radius: 5px; padding: 5px 10px; text-decoration: none;">Actualizar</a>
+                                    <a href="{{ route('items.edit', $item->id) }}" style="color: white; background-color: blue; border-radius: 5px; padding: 5px 10px; text-decoration: none;">Actualizar</a>
                                 </form>
                             </td>
                         </tr>

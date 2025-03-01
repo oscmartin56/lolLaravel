@@ -17,6 +17,7 @@
                 <option value="{{ $name }}">{{ $name }}</option>
             @endforeach
         </select>
+        <input type="hidden" name="id_champs" value="{{ $champ->id }}">
 
         <label for="damage">Daño</label>
         <select name="damage">
