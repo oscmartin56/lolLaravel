@@ -50,14 +50,24 @@ class ItemsController extends Controller
         //
     }
 
-    public function edit(Items $items)
+    public function edit($id)
     {
-        //
+        $items = Items::findOrFail($id);
+
+        return view('items.edit', compact('items'));
     }
 
-    public function update(Request $request, Items $items)
+    public function update(Request $request,$id)
     {
-        //
+        $items = Items::findOrFail($id);
+
+        $items->update([
+            'name' => $request->input('name'),
+            'damage' => $request->input('damage'),
+        ]);
+
+        session()->flash("mensaje", "Campeón con $items->name actualizado");
+        return redirect()->route('items.index');
     }
 
     public function destroy($id)

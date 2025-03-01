@@ -39,16 +39,18 @@ class ChampsController extends Controller
     {
         //
     }
-    public function edit(Champs $champs)
+    public function edit($id)
     {
-        $champNames = Champs::pluck('name');
-        return view('champs.edit', compact('champs', 'champNames'));
+        $champs = Champs::findOrFail($id);
+
+        return view('champs.edit', compact('champs'));
     }
 
-    public function update(Request $request, Champs $champs)
+    public function update(Request $request, $id)
     {
-        // Actualiza el campeón con los nuevos datos
-        $champs->update([
+        $champ = Champs::findOrFail($id);
+
+        $champ->update([
             'name' => $request->input('name'),
             'region' => $request->input('region'),
             'Rol' => $request->input('Rol'),
@@ -56,10 +58,10 @@ class ChampsController extends Controller
             'RPCost' => $request->input('RPCost'),
         ]);
 
-        session()->flash("mensaje", "Campeón $champs->name actualizado");
-
+        session()->flash("mensaje", "Campeón $champ->name actualizado");
         return redirect()->route('champs.index');
     }
+
     public function destroy($id)
     {
         $champs = Champs::findOrFail($id);

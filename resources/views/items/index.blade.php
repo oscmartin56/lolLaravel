@@ -43,6 +43,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" style="color: white; background-color: red; border-radius: 5px; padding: 5px 10px;">Eliminar</button>
+                                    <a href="{{ route('items.edit', $items->id) }}" style="color: white; background-color: blue; border-radius: 5px; padding: 5px 10px; text-decoration: none;">Actualizar</a>
                                 </form>
                             </td>
                         </tr>
@@ -56,6 +57,11 @@
             <button style="color: greenyellow; background-color: #2563eb; border-radius: 15px; height: 50px; width: 120px;">
                 <a href="{{ route('items.create') }}" style="color: inherit; text-decoration: none;">Agregar</a>
             </button>
+        </div>
+        <div style="display: flex; justify-content: flex-end; width: 70%; margin-top: 20px;">
+            <a href="{{ route('home') }}" style="color: ghostwhite; background-color: gray; border-radius: 15px; height: 50px; width: 120px; text-align: center; line-height: 50px; text-decoration: none;">
+                Volver
+            </a>
         </div>
         </body>
         </html>
