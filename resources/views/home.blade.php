@@ -34,7 +34,7 @@
         </div>
     @endguest
     @auth
-            <div class="bg-blue-950 min-h-screen p-4">
+            <div class="bg-blue-950 min-h-full p-4">
                 <div class="flex justify-center space-x-4">
                     <div class="p-4 card bg-base-100 image-full w-96 shadow-xl">
                         <figure>

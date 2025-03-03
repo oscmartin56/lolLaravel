@@ -25,7 +25,7 @@ Me dara un error porque no puede ejecutar migraciones
 * Relaciono las dos tablas 1-n en los modelos con el hasMany y el belongsTo y en el controlador añado un all de la otra tabla y la compacto
 * Añado un un mensaje en el controlador cuando se añade un campeon y lo pongo visible en el header
 * Añadido en el create la ruta y la obtención del json para poder sacar su contenido
-
+* 
 
 ## Diseño de pantallas
 ### 

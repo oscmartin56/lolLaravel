@@ -5,28 +5,28 @@ use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/index',MainController::class);
+//RUTA DEL HOME
 Route::view("/","home")->name("home");
 
+//RUTA DE LOS CHAMPS
 Route::get('champs',[ChampsController::class,'index'])->name('champs.index');
 Route::get('champs/create',[ChampsController::class,'create'])->name('champs.create');
 Route::post('champs',[ChampsController::class,'store'])->name('champs.store');
 Route::delete('champs/{id}', [ChampsController::class, 'destroy'])->name('champs.destroy');
-Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.destroy');
 Route::get('champs/{id}/edit', [ChampsController::class, 'edit'])->name('champs.edit');
 Route::put('champs/{id}', [ChampsController::class, 'update'])->name('champs.update');
+
+//RUTA DE LOS ITEMS
 Route::get('items/{id}/edit', [ItemsController::class, 'edit'])->name('items.edit');
 Route::put('items/{id}', [ItemsController::class, 'update'])->name('items.update');
-
-
-
 Route::get('items',[ItemsController::class,'index'])->name('items.index');
 Route::get('items/create',[ItemsController::class,'create'])->name('items.create');
 Route::post('items',[ItemsController::class,'store'])->name('items.store');
+Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.destroy');
 
-
+//RUTA DEL LOGIN
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
