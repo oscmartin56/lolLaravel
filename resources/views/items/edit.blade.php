@@ -16,9 +16,13 @@
                         <select class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg" name="name">
                             <option value="{{ $items->name }}" selected>{{ $items->name }}</option>
                             @foreach($itemsList as $item)
-                                <option value="{{ $item['name'] }}">{{ $item['name'] }}</option>
+                                <option value="{{ $item['name'] }}"
+                                    {{ in_array($item['name'], $existingItems) ? 'disabled' : '' }}>
+                                    {{ $item['name'] }}
+                                </option>
                             @endforeach
                         </select>
+
                     </div>
 
                     <div class="flex flex-col">
@@ -44,7 +48,10 @@
                             <select name="new_items[0][name]" class="p-2 bg-cyan-200 border border-gray-300 rounded-lg">
                                 <option value="">Seleccionar objeto</option>
                                 @foreach($itemsList as $item)
-                                    <option value="{{ $item['name'] }}">{{ $item['name'] }}</option>
+                                    <option value="{{ $item['name'] }}"
+                                        {{ in_array($item['name'], $existingItems) ? 'disabled' : '' }}>
+                                        {{ $item['name'] }}
+                                    </option>
                                 @endforeach
                             </select>
                             <!-- Selección de daño para el nuevo objeto -->
@@ -67,7 +74,7 @@
                     <button type="submit" class="w-full sm:w-auto p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
                         Actualizar
                     </button>
-                    <a class="w-full sm:w-auto p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400" href="{{ route('champs.index') }}">
+                    <a class="w-full sm:w-auto p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400" href="{{ route('items.index') }}">
                         Cancelar
                     </a>
                 </div>

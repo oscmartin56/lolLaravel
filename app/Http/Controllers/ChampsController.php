@@ -21,8 +21,10 @@ class ChampsController extends Controller
         $champs = json_decode($jsonData, true);
         //Obtiene el nombre de los campeones
         $champNames = collect($champs)->pluck('name');
+        $existingChamps = Champs::pluck('name')->toArray();
 
-        return view('champs.create', compact('champNames'));
+
+        return view('champs.create', compact('champNames', 'champs', 'existingChamps'));
 
     }
     public function store(Request $request)

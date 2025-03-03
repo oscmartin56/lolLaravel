@@ -7,7 +7,10 @@
     <label for="name">Campeón</label>
     <select name="name">
         @foreach($champNames as $name)
-            <option value="{{ $name }}">{{ $name }}</option>
+            <option value="{{ $name }}"
+                {{ in_array($name, $existingChamps) ? 'disabled' : '' }}>
+                {{ $name }}
+            </option>
         @endforeach
     </select>
     <label for="region">Región
@@ -53,6 +56,9 @@
         </select>
     </label>
     <button>Guardar</button>
+    <button>
+        <a href="{{ route('champs.index') }}" style="color: inherit; text-decoration: none;">Cancelar</a>
+    </button>
 </form>
 @endauth
 @guest()

@@ -24,17 +24,17 @@ class ItemsController extends Controller
         // Obtener el nombre de los objetos
         $itemNames = collect($items)->pluck('name');
 
+        $existingItems = Items::pluck('name')->toArray();
+
         $champs = Champs::all();
-        return view('items.create', compact('itemNames', 'champs'));
+        return view('items.create', compact('itemNames', 'champs','existingItems'));
     }
 
     public function store(Request $request)
     {
         $datos = $request->only("name", "damage", "id_champs");
+
         $items = new Items($datos);
-        $items->name = $datos['name'];
-        $items->damage = $datos['damage'];
-        $items->id_champs = $datos['id_champs'];
         $items->save();
 
         session()->flash("mensaje", "Campeón con item $items->name agregado");
@@ -57,30 +57,38 @@ class ItemsController extends Controller
         // Traer todos los campeones para la selección
         $champs = Champs::all();
 
-        return view('items.edit', compact('items', 'itemsList', 'champs'));
+        $existingItems = Items::pluck('name')->toArray();
+
+        return view('items.edit', compact('items', 'itemsList', 'champs','existingItems'));
     }
     public function update(Request $request, $id)
     {
-        // Depuración: Verifica los datos enviados en la solicitud
-        // dd($request->all());
-
         $items = Items::findOrFail($id);
 
         // Actualizar el item existente
         $items->update([
             'name' => $request->input('name'),
             'damage' => $request->input('damage'),
-            'id_champs' => $items->id_champs, // Mantener el mismo champ
+            'id_champs' => $items->id_champs,
         ]);
 
-        // Añadir nuevos items si existen
+        // Verificar si hay nuevos items antes de crearlos
         if ($request->has('new_items')) {
             foreach ($request->input('new_items') as $newItem) {
+                // Validar que el nuevo objeto tenga datos antes de crearlo
                 if (!empty($newItem['name']) && !empty($newItem['damage'])) {
+                    // Comprobar si el item ya existe en la base de datos
+                    $itemExists = Items::where('name', $newItem['name'])->exists();
+
+                    if ($itemExists) {
+                        return redirect()->back()->withErrors(['error' => "El objeto '{$newItem['name']}' ya existe en la base de datos."]);
+                    }
+
+                    // Si no existe, se crea el nuevo item
                     Items::create([
                         'name' => $newItem['name'],
                         'damage' => $newItem['damage'],
-                        'id_champs' => $newItem['id_champs'], // Usar el id_champs del nuevo item
+                        'id_champs' => $items->id_champs,
                     ]);
                 }
             }
@@ -89,6 +97,8 @@ class ItemsController extends Controller
         session()->flash("mensaje", "Objeto $items->name actualizado");
         return redirect()->route('items.index');
     }
+
+
     public function destroy($id)
     {
         $items = Items::findOrFail($id);
