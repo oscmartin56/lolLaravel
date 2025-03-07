@@ -41,10 +41,10 @@
                             <img src="{{asset("/images/lol.jpg")}}" alt="League of legends" />
                         </figure>
                         <div class="card-body">
-                            <h2 class="card-title">CRUD League Of Legends!</h2>
-                            <p>Página para ver todos los campeones de league of legends</p>
+                            <h2 class="card-title">{{ __('messages.tituloMenor') }}</h2>
+                            <p>{{__('messages.subtitulo1')}}</p>
                             <div class="card-actions justify-end">
-                                <a class="btn btn-primary" href="/champs">Ver Campeones</a>
+                                <a class="btn btn-primary" href="/champs">{{ __('messages.verCampeones1') }}</a>
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,10 @@
                             <img src="{{asset("/images/lol.jpg")}}" alt="League of legends" />
                         </figure>
                         <div class="card-body">
-                            <h2 class="card-title">CRUD League Of Legends!</h2>
-                            <p>Página para ver los Campeones con sus respectivos Objetos de league of legends</p>
+                            <h2 class="card-title">{{ __('messages.tituloMenor') }}</h2>
+                            <p>{{ __('messages.subtitulo2') }}</p>
                             <div class="card-actions justify-end">
-                                <a class="btn btn-primary" href="/items">Ver Campeones y Objetos</a>
+                                <a class="btn btn-primary" href="/items">{{ __('messages.verCampeones2') }}</a>
                             </div>
                         </div>
                     </div>

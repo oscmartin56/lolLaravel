@@ -4,6 +4,7 @@ use App\Http\Controllers\ChampsController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\LanguageController;
 
 //RUTA DEL HOME
 Route::view("/","home")->name("home");
@@ -23,6 +24,10 @@ Route::get('items',[ItemsController::class,'index'])->name('items.index');
 Route::get('items/create',[ItemsController::class,'create'])->name('items.create');
 Route::post('items',[ItemsController::class,'store'])->name('items.store');
 Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.destroy');
+
+//Lenguajes
+Route::get('language/{locale}',
+    LanguageController:: class)->name('language');
 
 //RUTA DEL LOGIN
 Route::get('/dashboard', function () {

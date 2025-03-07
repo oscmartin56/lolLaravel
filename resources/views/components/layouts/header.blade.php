@@ -5,7 +5,7 @@
     </a>
     <!-- Título con mejor tipografía -->
     <h1 class="hidden md:block text-white text-4xl font-extrabold tracking-widest font-serif">
-        CHAMPS DE LEAGUE OF LEGENDS
+        {{ __('messages.tituloPrincipal') }}
     </h1>
 
     <!-- Controles de usuario -->
@@ -14,7 +14,7 @@
             <span class="text-white font-medium text-lg font-mono">{{ auth()->user()->name }}</span>
             <form action="{{ route('logout') }}" method="POST" class="inline">
                 @csrf
-                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-semibold">Cerrar Sesión</button>
+                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-semibold">{{ __('messages.cerrarSesion') }}</button>
             </form>
 
             @if (session('mensaje'))

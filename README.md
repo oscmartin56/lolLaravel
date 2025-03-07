@@ -25,7 +25,7 @@ Me dara un error porque no puede ejecutar migraciones
 * Relaciono las dos tablas 1-n en los modelos con el hasMany y el belongsTo y en el controlador añado un all de la otra tabla y la compacto
 * Añado un un mensaje en el controlador cuando se añade un campeon y lo pongo visible en el header
 * Añadido en el create la ruta y la obtención del json para poder sacar su contenido
-* 
+* Creacion de idiomas, creo la carpeta lang en resources y creo las subcarpetas con sus idiomas, a su vez creo un .php para añadir el texto en su idioma y lo enlazo en los diferentes sitios de la web con {{ __('messages.loquesea') }} y despues creo el controlador(php artisan make:controller LanguageController)  y su middleware(php artisan make:middleware LanguageMiddleware)
 
 ## Diseño de pantallas
 ### 
