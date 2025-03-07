@@ -15,5 +15,7 @@
            href="https://lolesports.com/es-ES/">
             {{ __('messages.esports') }}
         </a>
+
+        <x-layouts.lang />
     </div>
 </nav>

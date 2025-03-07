@@ -1,4 +1,4 @@
-<php
+<?php
 return [
     'tituloPrincipal' => 'LEAGUE OF LEGENDS CHAMPIONS',
     'tituloMenor' => 'League Of Legends CRUD!',

@@ -1,4 +1,4 @@
-<php
+<?php
 return [
     'tituloPrincipal' => 'リーグ・オブ・レジェンドのチャンピオン',
     'tituloMenor' => 'リーグ・オブ・レジェンドのCRUD！',
