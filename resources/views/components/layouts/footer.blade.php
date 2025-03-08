@@ -3,9 +3,9 @@
         <svg width="16" height="16" viewBox="0 0 24 24" class="fill-current">
             <path d="M22.672 15.226l-2.432..." />
         </svg>
-        <p class="font-bold">Riot Games</p>
-        <p class="font-bold">Fundado en Septiembre de 2006</p>
-        <p>© - All rights reserved</p>
+        <p class="font-bold">{{ __('messages.riot') }}</p>
+        <p class="font-bold">{{ __('messages.fundado') }}</p>
+        <p>{{ __('messages.derechos') }}</p>
     </aside>
     <nav>
         <div class="flex space-x-1 mt-1">

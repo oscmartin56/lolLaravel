@@ -28,7 +28,7 @@ Route::delete('items/{id}', [ItemsController::class, 'destroy'])->name('items.de
 //Lenguajes
 Route::get('language/{locale}', LanguageController::class)->name('language');
 //RUTA DEL LOGIN
-Route::get('/dashboard', function () {
+Route::get('/home', function () {
     return view('/home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

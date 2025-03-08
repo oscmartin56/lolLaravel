@@ -2,7 +2,7 @@
 @auth
     <div class="bg-blue-300 min-h-full p-4 flex flex-col items-center justify-start">
         <h1 class="font-bold text-white text-2xl text-center mb-0" style="font-family: Chalkboard, Comic Sans MS, sans-serif;">
-            Editar Campeón de League of Legends
+            {{ __('messages.tituloEditarChamps') }}
         </h1>
 
         <form action="{{ route('champs.update', $champs->id) }}" method="post" class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-md mt-4"
@@ -12,7 +12,7 @@
 
             <div class="grid grid-cols-2 gap-6 mb-2.3">
                 <div class="flex flex-col bg-gray-50 p-3 rounded-lg shadow-sm border border-gray-300">
-                    <label class="text-lg font-bold text-black" for="name">Campeón</label>
+                    <label class="text-lg font-bold text-black" for="name">{{ __('messages.campeon') }}</label>
                     <div class="mt-1 text-lg font-semibold text-gray-900 bg-gray-200 px-4 py-2 rounded-md shadow-inner text-center">
                         <input type="hidden" name="name" value="{{ $champs->name }}">
                         {{ $champs->name }}
@@ -21,7 +21,7 @@
 
 
                 <div class="flex flex-col">
-                    <label class="text-lg font-bold" for="region">Región</label>
+                    <label class="text-lg font-bold" for="region">{{ __('messages.region') }}</label>
                     <select class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg" name="region">
                         <option>Demacia</option>
                         <option>Noxus</option>
@@ -41,7 +41,7 @@
 
             <div class="grid grid-cols-2 gap-6 mb-4">
                 <div class="flex flex-col">
-                    <label class="text-lg font-bold" for="Rol">Rol</label>
+                    <label class="text-lg font-bold" for="Rol">{{ __('messages.rol') }}</label>
                     <select class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg" name="Rol">
                         <option>Top Laner</option>
                         <option>Jungla</option>
@@ -52,18 +52,18 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <label class="text-lg font-bold" for="difficulty">Dificultad</label>
+                    <label class="text-lg font-bold" for="difficulty">{{ __('messages.dificultad') }}</label>
                     <select class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg" name="difficulty">
-                        <option>Fácil</option>
-                        <option>Normal</option>
-                        <option>Difícil</option>
+                        <option>{{ __('messages.dificultadFacil') }}</option>
+                        <option>{{ __('messages.dificultadNormal') }}</option>
+                        <option>{{ __('messages.dificultadDificil') }}</option>
                     </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-6 mb-4">
                 <div class="flex flex-col">
-                    <label class="text-lg font-bold" for="RPCost">Precio en RP</label>
+                    <label class="text-lg font-bold" for="RPCost">{{ __('messages.precio') }}</label>
                     <select class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg" name="RPCost">
                         <option>450</option>
                         <option>1350</option>
@@ -78,10 +78,10 @@
             <!-- Botones -->
             <div class="flex justify-between mt-4 space-x-4">
                 <button class="w-full sm:w-auto p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
-                    Actualizar
+                    {{ __('messages.actualizar') }}
                 </button>
                 <a class="w-full sm:w-auto p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400" href="{{ route('champs.index') }}">
-                    Cancelar
+                    {{ __('messages.cancelar') }}
                 </a>
             </div>
         </form>

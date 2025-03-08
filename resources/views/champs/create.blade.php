@@ -2,7 +2,7 @@
 @auth
     <div class="bg-blue-300 min-h-full p-2 flex flex-col items-center justify-start">
         <h2 class="font-bold text-white text-2xl text-center mb-4" style="font-family: Chalkboard, Comic Sans MS, sans-serif;">
-            Crear Campeón de League of Legends
+            {{ __('messages.tituloCrearChamps') }}
         </h2>
 
         <form action="{{ route('champs.store') }}" method="post" class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-md mt-4">
@@ -11,7 +11,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <!-- Columna 1 -->
                 <div class="flex flex-col">
-                    <label for="name" class="block text-lg font-bold">Campeón</label>
+                    <label for="name" class="block text-lg font-bold">{{ __('messages.campeon') }}</label>
                     <select name="name" class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg w-full">
                         @foreach($champNames as $name)
                             <option value="{{ $name }}" {{ in_array($name, $existingChamps) ? 'disabled' : '' }}>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="region" class="block text-lg font-bold">Región</label>
+                    <label for="region" class="block text-lg font-bold">{{ __('messages.region') }}</label>
                     <select name="region" class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg w-full">
                         <option>Demacia</option>
                         <option>Noxus</option>
@@ -41,7 +41,7 @@
 
                 <!-- Columna 2 -->
                 <div class="flex flex-col">
-                    <label for="Rol" class="block text-lg font-bold">Rol</label>
+                    <label for="Rol" class="block text-lg font-bold">{{ __('messages.rol') }}</label>
                     <select name="Rol" class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg w-full">
                         <option>Top Laner</option>
                         <option>Jungla</option>
@@ -52,16 +52,16 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="difficulty" class="block text-lg font-bold">Dificultad</label>
+                    <label for="difficulty" class="block text-lg font-bold">{{ __('messages.dificultad') }}</label>
                     <select name="difficulty" class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg w-full">
-                        <option>Fácil</option>
-                        <option>Normal</option>
-                        <option>Dificil</option>
+                        <option>{{ __('messages.dificultadFacil') }}</option>
+                        <option>{{ __('messages.dificultadNormal') }}</option>
+                        <option>{{ __('messages.dificultadDificil') }}</option>
                     </select>
                 </div>
 
                 <div class="flex flex-col">
-                    <label for="RPCost" class="block text-lg font-bold">Precio en RP</label>
+                    <label for="RPCost" class="block text-lg font-bold">{{ __('messages.precio') }}</label>
                     <select name="RPCost" class="p-2 mt-2 bg-cyan-200 border border-gray-300 rounded-lg w-full">
                         <option>450</option>
                         <option>1350</option>
@@ -75,10 +75,10 @@
 
             <div class="flex justify-between mt-6 space-x-4">
                 <button type="submit" class="w-full sm:w-auto p-3 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
-                    Guardar
+                    {{ __('messages.guardar') }}
                 </button>
                 <a href="{{ route('champs.index') }}" class="w-full sm:w-auto p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-center">
-                    Cancelar
+                    {{ __('messages.cancelar') }}
                 </a>
             </div>
         </form>

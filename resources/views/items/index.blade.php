@@ -5,15 +5,16 @@
             <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
                 <thead style="position: sticky; top: 0; background-color: #2563eb; color: white; z-index: 10;">
                 <tr>
-                    <th>ID Campeón</th>
-                    <th>Campeón</th>
-                    <th>Región</th>
-                    <th>Rol</th>
-                    <th>Dificultad</th>
-                    <th>ID Objeto</th>
-                    <th>Objeto</th>
-                    <th>Daño</th>
-                    <th>Acciones</th>
+                    <th>{{ __('messages.idCampeon') }}</th>
+                    <th>{{ __('messages.campeon') }}</th>
+                    <th>{{ __('messages.region') }}</th>
+                    <th>{{ __('messages.rol') }}</th>
+                    <th>{{ __('messages.dificultad') }}</th>
+                    <th>{{ __('messages.precio') }}</th>
+                    <th>{{ __('messages.idObjeto') }}</th>
+                    <th>{{ __('messages.objeto') }}</th>
+                    <th>{{ __('messages.daño') }}</th>
+                    <th>{{ __('messages.acciones') }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,7 @@
                         <td>{{$item->champs->region}}</td>
                         <td>{{$item->champs->Rol}}</td>
                         <td>{{$item->champs->difficulty}}</td>
+                        <td>{{$item->champs->RPCost}}</td>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->damage}}</td>
@@ -32,10 +34,10 @@
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('¿Estás seguro de querer eliminar el item del campeón seleccionado?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" style="padding: 8px 16px; border-radius: 8px; background-color: #ef4444; color: white; text-decoration: none; display: inline-block; transition: background-color 0.3s ease;">Eliminar</button>
+                                <button type="submit" style="padding: 8px 16px; border-radius: 8px; background-color: #ef4444; color: white; text-decoration: none; display: inline-block; transition: background-color 0.3s ease;">{{ __('messages.eliminar') }}</button>
                             </form>
 
-                            <a href="{{ route('items.edit', $item->id) }}" style="padding: 8px 16px; border-radius: 8px; background-color: #3b82f6; color: white; text-decoration: none; display: inline-block; text-align: center; transition: background-color 0.3s ease;">Actualizar</a>
+                            <a href="{{ route('items.edit', $item->id) }}" style="padding: 8px 16px; border-radius: 8px; background-color: #3b82f6; color: white; text-decoration: none; display: inline-block; text-align: center; transition: background-color 0.3s ease;">{{ __('messages.actualizar') }}</a>
                         </td>
                     </tr>
                 @endforeach
@@ -44,9 +46,9 @@
         </div>
 
         <div style="display: flex; justify-content: flex-end; width: 100%; gap: 10px; margin-top: 20px; position: relative;">
-            <a href="{{ route('items.create') }}" style="background-color: #22c55e; color: black; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">Agregar</a>
+            <a href="{{ route('items.create') }}" style="background-color: #22c55e; color: black; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">{{ __('messages.agregar') }}</a>
 
-            <a href="{{ route('home') }}" style="background-color: #6b7280; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">Volver</a>
+            <a href="{{ route('home') }}" style="background-color: #6b7280; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">{{ __('messages.volver') }}</a>
         </div>
     </div>
 @endauth
